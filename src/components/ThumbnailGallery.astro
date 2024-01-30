@@ -4,7 +4,7 @@
 
 <swiper-container
     style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-    class="mySwiper"
+    class="mySwiper slides"
     thumbs-swiper=".mySwiper2"
     loop="true"
     space-between="10"
@@ -28,26 +28,26 @@
 </swiper-container>
 
 <swiper-container
-    class="mySwiper2"
+    class="mySwiper2 mt-3"
     loop="true"
     space-between="10"
     slides-per-view="4"
     free-mode="true"
     watch-slides-progress="true"
 >
-    <swiper-slide>
+    <swiper-slide class="thumb"> 
         <img src="/nbf/1.jpg" />
     </swiper-slide>
-    <swiper-slide>
+    <swiper-slide class="thumb">
         <img src="/nbf/2.jpeg" />
     </swiper-slide>
-    <swiper-slide>
+    <swiper-slide class="thumb">
         <img src="/nbf/3.jpeg" />
     </swiper-slide>
-    <swiper-slide>
+    <swiper-slide class="thumb">
         <img src="/nbf/4.jpeg" />
     </swiper-slide>
-    <swiper-slide>
+    <swiper-slide class="thumb">
         <img src="/nbf/5.jpeg" />
     </swiper-slide>
 </swiper-container>
@@ -57,17 +57,31 @@
 ></script>
 
 <style>
-    swiper-container {
+    swiper-container.slides {
         width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    swiper-slide.thumb {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: pink;
+    }
+
+    swiper-slide {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-size: contain;
+        background-position: center;
     }
 
     swiper-slide img {
         width: 100%;
-        object-fit: cover;
+        height: 100%;
+        object-fit: fill;
     }
+    
 
-    swiper-slide {
-        background-size: cover;
-        background-position: center;
-    }
+    
 </style>
